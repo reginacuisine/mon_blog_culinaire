@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# Utilise dj_database_url pour détecter automatiquement le serveur
+
 DATABASES = {
     'default': dj_database_url.config(
-        # Cette URL est utilisée sur ton ThinkPad
-        default='postgresql://postgres:52948922gina@localhost:5432/mon_projet_db',
+        # Cette ligne permet de prendre la base de Render en priorité
+        default=os.environ.get('DATABASE_URL', 'postgresql://postgres:52948922gina@localhost:5432/mon_projet_db'),
         conn_max_age=600
     )
 }
