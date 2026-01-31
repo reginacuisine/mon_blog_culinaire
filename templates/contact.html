@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactez-nous | Régina Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900">
+
+    <main class="py-16 container mx-auto px-4 max-w-3xl">
+        <div class="text-center py-12">
+    <h1 class="text-5xl font-black uppercase tracking-tighter mb-6">Contact</h1>
+
+    <p class="text-xl font-medium text-gray-600 mb-4">Laissez-moi un message</p>
+
+    <p class="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed italic">
+        Vous voulez papoter un peu avec moi ou me poser une question ? <br>
+        Laissez-moi un message et je vous répondrai au plus vite...
+</div>
+
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">Contact Me</h2>
+    <p class="text-sm text-gray-500 mb-10">
+        Les champs marqués d’un <span class="text-red-600 font-bold">*</span> sont obligatoires
+    </p>
+
+    <form action="#" method="POST" class="space-y-10">
+        {% csrf_token %}
+
+        <div class="space-y-3">
+            <label class="block text-xl font-bold text-gray-800">Name <span class="text-red-600">*</span></label>
+            <input type="text" name="name" 
+                class="w-full border border-gray-300 p-4 focus:ring-0 focus:border-gray-400 outline-none transition-colors">
+        </div>
+
+        <div class="space-y-3">
+            <label class="block text-xl font-bold text-gray-800">Email <span class="text-red-600">*</span></label>
+            <div class="relative flex">
+                <input type="email" name="email" 
+                    class="w-full border border-red-600 p-4 outline-none bg-white">
+                
+                <div class="bg-red-600 w-16 flex items-center justify-center text-white text-3xl font-bold">
+                    !
+                </div>
+            </div>
+            <p class="text-red-600 text-lg font-medium">Ce champ est obligatoire.</p>
+        </div>
+
+        <div class="space-y-3">
+            <label class="block text-xl font-bold text-gray-800">Message <span class="text-red-600">*</span></label>
+            <textarea name="message" rows="10" 
+                class="w-full border border-gray-300 p-4 focus:ring-0 focus:border-gray-400 outline-none transition-colors"></textarea>
+        </div>
+
+        <div class="pt-6">
+            <button type="submit" 
+                class="bg-[#A0A0A0] text-white px-12 py-5 rounded-sm font-bold uppercase tracking-widest hover:bg-black transition-all duration-300 text-sm shadow-sm">
+                Soumettre
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+
+            </div>
+        </form>
+    </main>
+
+    <footer class="bg-black text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-800 pb-12 text-sm">
+            <div>
+                <h5 class="font-bold mb-6 uppercase">À propos</h5>
+                <ul class="space-y-3 text-gray-400">
+                    <li>Université Thomas SANKARA</li>
+                    <li>Biographie de Regina</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6 uppercase">Mon Regina</h5>
+                <ul class="space-y-3 text-gray-400">
+                    <li>Mes recettes</li>
+                    <li>Mon menu</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6 uppercase">Service à la clientèle</h5>
+                <ul class="space-y-3 text-gray-400">
+                    <li>FAQ cuisine</li>
+                    <li><a href="{% url 'contact_page' %}" class="text-white font-bold">CONTACT</a></li>
+                </ul>
+            </div>
+            <div>
+                <h1 class="text-4xl font-black uppercase tracking-tighter">Regina</h1>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
