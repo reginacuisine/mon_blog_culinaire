@@ -138,3 +138,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# À supprimer après que ça ait fonctionné une fois !
+from django.contrib.auth import get_user_model
+User = get_user_model()
+if not User.objects.filter(username='admin_regina').exists():
+    User.objects.create_superuser('admin_regina', 'reginatonde44@gmail.com', 'Regina2026!')
