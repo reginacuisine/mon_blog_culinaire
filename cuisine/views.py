@@ -23,4 +23,4 @@ def contact(request):
             
     return render(request, 'contact.html')
 def home(request):
-    return render(request, 'home.html') # Assure-toi d'avoir un fichier home.html dans tes templates
+    return render(request, 'accueil.html') # On change home.html par accueil.html
