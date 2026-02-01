@@ -125,14 +125,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Configuration pour recevoir les alertes par mail
+# Configuration Email corrigée
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False  # Ajoute cette ligne si elle n'y est pas
-EMAIL_HOST_USER = 'reginatonde44@gmail.com'
+EMAIL_USE_SSL = False
+# On utilise os.environ.get pour ne pas faire planter le site si la variable manque
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER', 'reginatonde44@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
-DEFAULT_FROM_EMAIL = 'reginatonde44@gmail.com' # Ajoute aussi celle-là
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
