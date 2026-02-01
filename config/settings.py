@@ -134,3 +134,5 @@ EMAIL_USE_SSL = False  # Ajoute cette ligne si elle n'y est pas
 EMAIL_HOST_USER = 'reginatonde44@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 DEFAULT_FROM_EMAIL = 'reginatonde44@gmail.com' # Ajoute aussi celle-là
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
