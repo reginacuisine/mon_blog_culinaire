@@ -22,3 +22,5 @@ def contact(request):
             messages.error(request, "Erreur d'envoi.")
             
     return render(request, 'contact.html')
+def home(request):
+    return render(request, 'home.html') # Assure-toi d'avoir un fichier home.html dans tes templates
