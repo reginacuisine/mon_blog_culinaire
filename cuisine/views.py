@@ -7,11 +7,10 @@ from .models import Plat
 
 def contact(request):
     if request.method == 'POST':
-        nom = request.POST.get('nom')
-        email = request.POST.get('email')
-        sujet = request.POST.get('sujet')
-        message = request.POST.get('message')
-
+        # Ces noms doivent être IDENTIQUES à ceux de ton HTML
+        nom = request.POST.get('nom')       # Correspond à name="nom"
+        email = request.POST.get('email')   # Correspond à name="email"
+        message = request.POST.get('message') # Correspond à n
         # Envoi du mail
         try:
             send_mail(
