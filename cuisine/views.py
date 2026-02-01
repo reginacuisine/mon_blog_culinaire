@@ -14,8 +14,8 @@ def contact(request):
                 f"De: {nom} ({email_client})\n\n{message_client}",
                 'reginatonde44@gmail.com',
                 ['reginatonde44@gmail.com'],
-                fail_silently=False,
-            )
+                # Change fail_silently=False par True
+                fail_silently=True,            )
             messages.success(request, "Message envoyé !")
             return redirect('contact_page')
         except Exception:
